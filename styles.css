@@ -1,0 +1,188 @@
+/* Global Reset and Body Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 18px;
+    color: #2D3748;
+    background-color: #f7fafc;
+    line-height: 1.6;
+}
+
+/* Exercise 4: CSS Grid on .container */
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Header with Flexbox centering */
+header {
+    grid-area: header;
+    background-color: #3C8527;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.headphoto {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+    border: 3px solid #28651C;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+header h1 {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 39px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+header p {
+    font-style: italic;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* Sidebar (<aside>) styling */
+aside {
+    grid-area: sidebar;
+    padding: 24px 20px;
+    border-right: 1px solid #E2E8F0;
+}
+
+.about-section {
+    background-color: #E2E8F0;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.about-heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333322;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.about-section p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.sidebar-heading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #28651C;
+    font-size: 20px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 16px;
+}
+
+aside ul li {
+    margin-bottom: 6px;
+}
+
+aside ul li a {
+    color: #2879B8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+aside ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Area */
+main {
+    grid-area: main;
+    padding: 30px 40px;
+}
+
+.blogpost {
+    margin-bottom: 20px;
+}
+
+.blogpost h2 {
+    font-size: 34px;
+    color: #28651C;
+    margin-bottom: 4px;
+}
+
+.postdate {
+    color: #667267;
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+/* Float Image Requirements */
+.post-img-right {
+    float: right;
+    width: 260px;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.post-img-left {
+    float: left;
+    width: 260px;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.blogpost p {
+    margin-bottom: 14px;
+    text-align: justify;
+}
+
+/* Clearfix for floated post content */
+.blogpost::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.post-divider {
+    border: 0;
+    height: 1px;
+    background-color: #E2E8F0;
+    margin: 28px 0;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color: #28651C;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 16px;
+    font-size: 15px;
+}
